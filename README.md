@@ -1,6 +1,6 @@
-## Scale- and Slice- aware Net (S${^2}$aNet)  
+## Scale- and Slice- aware Net
 
-**Source codes of the network architecture** in **Paper: Scale- and Slice- aware Net (S${^2}$aNet) for 3D segmentation of organs and musculoskeletal structures in pelvic MRI**   
+**Source codes of the network architecture** in [Paper: Scale- and Slice- aware Net for 3D segmentation of organs and musculoskeletal structures in pelvic MRI (To Be Udpated)](https://onlinelibrary.wiley.com/journal/15222594)   
 
 #### Research Type  
 - Machine Learning/Deep Learning  
