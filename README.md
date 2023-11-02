@@ -2,7 +2,7 @@
 
 The offical implementation of the network architecture in Paper: [Scale- and Slice- aware Net for 3D segmentation of organs and musculoskeletal structures in pelvic MRI](https://onlinelibrary.wiley.com/doi/epdf/10.1002/mrm.28939)
 
-![fig2-flow-eps](assets/fig2-flow-eps-converted-to.pdf)
+![fig2-flow-eps](assets/fig2-flow-eps-converted-to.jpg)
 
 
 > **Research Type**：Machine Learning/Deep Learning，Image processing/Image analysis， Technical Research  
@@ -15,7 +15,7 @@ The offical implementation of the network architecture in Paper: [Scale- and Sli
 ## Abstract
 **S^2aNet** is presented for 3D dense segmentation of 54 organs and musculoskeletal structures in female pelvic MR images. A Scale- aware module is designed to capture the spatial and semantic information of different-scale structures. A Slice-aware module is introduced to model similar spatial relationships of consecutive slices in 3D data. Moreover, S^2aNet leverages a weight-adaptive loss optimization strategy to reinforce the supervision with more discriminative capability on hard samples and categories.
 
-![fig3-network](assets/fig3-network-eps-converted-to.pdf)
+![fig3-network](assets/fig3-network-eps-converted-to.jpg)
 
 
 
@@ -37,7 +37,7 @@ Experiments have been performed on a pelvic MRI cohort of 27 MR images from 27 p
 
 The segmentation results are given below:
 
-![fig6-3d-vis-eps](assets/fig6-3d-vis-eps-converted-to.pdf)
+![fig6-3d-vis-eps](assets/fig6-3d-vis-eps-converted-to.jpg)
 
 
 
