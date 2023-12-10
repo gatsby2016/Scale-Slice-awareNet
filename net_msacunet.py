@@ -73,9 +73,9 @@ class msacUNet(nn.Module):
         self.maxpool = nn.MaxPool2d(kernel_size=2)
         # upsampling
         # self.up_concat4 = unetUp(filters[4], filters[3], self.is_deconv)
-        self.up_concat3 = unetUp(filters[3], filters[2], self.is_deconv, n_concat=4)
-        self.up_concat2 = unetUp(filters[2], filters[1], self.is_deconv, n_concat=4)
-        self.up_concat1 = unetUp(filters[1], filters[0], self.is_deconv, n_concat=4)
+        self.up_concat3 = unetUp(filters[3], filters[2], self.is_deconv, n_concat=2)
+        self.up_concat2 = unetUp(filters[2], filters[1], self.is_deconv, n_concat=2)
+        self.up_concat1 = unetUp(filters[1], filters[0], self.is_deconv, n_concat=2)
         # final conv (without any concat)
         self.final = nn.Conv2d(filters[0], n_classes, 1)
 
@@ -112,13 +112,13 @@ class msacUNet(nn.Module):
         conv4 = self.conv4(maxpool_cat)  # 512*64*64
 
         up4 = self.aspp(conv4)
-        up3 = self.up_concat3(up4, torch.cat([conv3_1, conv3_0, conv3_2], 1))  # 256*128*128
-        up2 = self.up_concat2(up3, torch.cat([conv2_1, conv2_0, conv2_2], 1))  # 128*256*256
-        up1 = self.up_concat1(up2, torch.cat([conv1_1, conv1_0, conv1_2], 1))  # 64*512*512
+        # up3 = self.up_concat3(up4, torch.cat([conv3_1, conv3_0, conv3_2], 1))  # 256*128*128
+        # up2 = self.up_concat2(up3, torch.cat([conv2_1, conv2_0, conv2_2], 1))  # 128*256*256
+        # up1 = self.up_concat1(up2, torch.cat([conv1_1, conv1_0, conv1_2], 1))  # 64*512*512
 
-        # up3 = self.up_concat3(up4, conv3_1)  # 256*128*128
-        # up2 = self.up_concat2(up3, conv2_1)  # 128*256*256
-        # up1 = self.up_concat1(up2, conv1_1)  # 64*512*512
+        up3 = self.up_concat3(up4, conv3_1)  # 256*128*128
+        up2 = self.up_concat2(up3, conv2_1)  # 128*256*256
+        up1 = self.up_concat1(up2, conv1_1)  # 64*512*512
 
         final = self.final(up1)
         return final
